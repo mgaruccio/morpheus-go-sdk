@@ -41,6 +41,11 @@ type InstancePlan struct {
 	Code string `json:"code"`
 }
 
+type Owner struct {
+	ID       int64  `json:"id"`
+	Username string `json:"username"`
+}
+
 // ListInstancesResult structure parses the list instances response payload
 type ListInstancesResult struct {
 	Instances *[]Instance `json:"instances"`
@@ -159,7 +164,7 @@ func (client *Client) ListInstancePlans(req *Request) (*Response, error) {
 	})
 }
 
-//todo: need this api endpoint still, and consolidate to /api/plans perhaps
+// todo: need this api endpoint still, and consolidate to /api/plans perhaps
 func (client *Client) GetInstancePlan(id int64, req *Request) (*Response, error) {
 	return client.Execute(&Request{
 		Method:      "GET",
