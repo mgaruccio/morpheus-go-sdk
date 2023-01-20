@@ -25,6 +25,7 @@ type Instance struct {
 	Labels       []string               `json:"labels"`
 	Version      string                 `json:"instanceVersion"`
 	Status       string                 `json:"status"`
+	Owner        Owner                  `json:"owner"`
 
 	// might want to define types for these too
 	Volumes              *[]map[string]interface{} `json:"volumes"`
